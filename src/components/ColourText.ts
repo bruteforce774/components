@@ -1,4 +1,4 @@
-export default class ColourText extends HTMLElement{
+export default class ColourText extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
