@@ -1,5 +1,12 @@
-export default class ColourText {
-    
+export default class ColourText extends HTMLElement{
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.shadowRoot!.innerHTML
+    }
 }
 
 // export function ColourText(text: string, colour: string) : HTMLElement {
