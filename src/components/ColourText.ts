@@ -5,7 +5,20 @@ export default class ColourText extends HTMLElement{
     }
 
     connectedCallback() {
-        this.shadowRoot!.innerHTML
+        const text = this.getAttribute('text') ?? "Hello World";
+        const colour = this.getAttribute('colour') ?? "blue";
+        this.shadowRoot!.innerHTML = /*HTML*/`
+            <style>
+                div {
+                    color: ${colour};
+                    font-family: Arial, sans-serif;
+                    font-size: 20px;
+                }
+            </style>
+            <div>${text}</div>
+        `;
+        const div = this.shadowRoot!.querySelector('div')!;
+        div.style.color = colour;
     }
 }
 
